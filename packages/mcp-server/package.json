@@ -1,0 +1,31 @@
+{
+  "name": "@outserp/mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Outserp - AI SEO & AEO content platform",
+  "homepage": "https://outserp.ai/docs/mcp",
+  "main": "dist/index.js",
+  "bin": {
+    "outserp-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@outserp/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": ["mcp", "outserp", "seo", "content", "ai"],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

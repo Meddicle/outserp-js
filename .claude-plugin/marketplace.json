@@ -1,0 +1,16 @@
+{
+  "name": "outserp",
+  "owner": {
+    "name": "Outserp",
+    "email": "support@outserp.ai"
+  },
+  "plugins": [
+    {
+      "name": "outserp",
+      "source": "./plugins/outserp",
+      "description": "AI SEO & AEO from your agent: pull brand/visibility data, generate articles from your own research, and build programmatic content plans via the Outserp MCP server.",
+      "version": "1.0.0",
+      "author": { "name": "Outserp" }
+    }
+  ]
+}

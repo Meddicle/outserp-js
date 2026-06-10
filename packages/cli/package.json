@@ -1,0 +1,44 @@
+{
+  "name": "@outserp/cli",
+  "version": "1.0.0",
+  "description": "Outserp CLI — AI SEO & AEO content platform from your terminal",
+  "homepage": "https://outserp.ai/docs/api",
+  "type": "module",
+  "bin": {
+    "outserp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "seo",
+    "aeo",
+    "ai",
+    "content",
+    "cli",
+    "outserp"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@outserp/sdk": "^1.0.0",
+    "commander": "^13.1.0",
+    "chalk": "^5.4.1",
+    "ora": "^8.2.0",
+    "conf": "^13.0.1",
+    "cli-table3": "^0.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.0"
+  }
+}

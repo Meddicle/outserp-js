@@ -1,0 +1,43 @@
+{
+  "name": "@outserp/sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for the Outserp REST API v1",
+  "homepage": "https://outserp.ai/docs/api",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "outserp",
+    "sdk",
+    "seo",
+    "aeo",
+    "ai",
+    "content"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

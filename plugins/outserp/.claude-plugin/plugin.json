@@ -1,0 +1,9 @@
+{
+  "name": "outserp",
+  "description": "AI SEO & AEO from your agent — pull brand and AI‑visibility data, generate articles seeded with your own research, and build & bulk‑run programmatic content plans through the Outserp MCP server.",
+  "version": "1.0.0",
+  "author": { "name": "Outserp", "email": "support@outserp.ai" },
+  "homepage": "https://outserp.ai/docs/mcp",
+  "repository": "https://github.com/Meddicle/outserp-js",
+  "license": "MIT"
+}
