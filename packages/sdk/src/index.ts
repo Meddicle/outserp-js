@@ -414,6 +414,19 @@ export class OutserpClient {
     return this.request(`/site-health?projectId=${pid}`);
   }
 
+  // ── Prospect audit (agencies/admins) ─────────────────────────────────
+
+  /**
+   * Run an AI-visibility audit on ANY domain and get a shareable report URL.
+   * Spends one audit credit. Returns { auditId, reportUrl, visibilityScore, ... }.
+   */
+  runAudit(domain: string, opts?: { deep?: boolean }) {
+    return this.request<{ auditId: string; reportUrl: string; visibilityScore: number; competitors: string[]; topGaps: string[]; domain: string; brandName?: string }>(
+      '/audit',
+      { method: 'POST', body: JSON.stringify({ domain, ...opts }) },
+    );
+  }
+
   // ── Credits (wallet + on-demand top-up) ──────────────────────────────
 
   /** Current consumable credit balance + recent ledger entries. */

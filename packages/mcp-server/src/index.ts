@@ -523,6 +523,24 @@ server.tool(
   }
 );
 
+// ── Prospect audit (agencies/admins) ──────────────────────────────────────────
+
+server.tool(
+  'run_audit',
+  "Run an AI-visibility audit on ANY domain (a prospect or competitor you don't own) and get a shareable, branded report URL to send them. Spends one audit credit. Returns the visibility score, competitors who outrank them, content gaps, and a public report link with graphs. Great for agencies auditing a potential client before a pitch.",
+  {
+    domain: z.string().describe('Domain to audit, e.g. acme.com'),
+    deep: z.boolean().optional().describe('Richer multi-engine audit (default true)'),
+  },
+  async ({ domain, deep }) => {
+    try {
+      return ok(await client.runAudit(domain, { deep }));
+    } catch (e) {
+      return err(e);
+    }
+  }
+);
+
 // ── Account / Discovery ───────────────────────────────────────────────────────
 
 server.tool(

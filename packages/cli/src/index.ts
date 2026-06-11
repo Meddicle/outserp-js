@@ -259,14 +259,15 @@ program
 
 program
   .command('audit')
-  .description('Run a site health and visibility audit')
-  .argument('<domain>', 'Domain to audit')
+  .description('Run an AI-visibility audit on any domain (spends 1 audit credit). Returns a shareable report URL.')
+  .argument('<domain>', 'Domain to audit, e.g. acme.com')
+  .option('--shallow', 'Faster, single-engine audit')
   .option('--format <fmt>', 'Output format', 'table')
-  .action(async (domain: string, opts: { format: string }) => {
+  .action(async (domain: string, opts: { shallow?: boolean; format: string }) => {
     const client = getClient();
     const s = spinner(`Auditing ${domain}...`);
     try {
-      const result = await client.getVisibilitySummary();
+      const result = await client.runAudit(domain, { deep: !opts.shallow });
       s.stop();
       outputResult(result, opts.format);
     } catch (err: any) {
