@@ -554,7 +554,18 @@ server.tool(
         client.getCredits().catch(() => null),
         client.listProjects().catch(() => null),
       ]);
-      return ok({ usage, credits, projects });
+      const u: any = (usage as any)?.data ?? usage ?? {};
+      const active = u.active === true;
+      const account = {
+        tier: u.tier ?? null,
+        status: u.status ?? null,
+        active,
+        signupUrl: u.signupUrl ?? 'https://outserp.ai/signup',
+        note: active
+          ? undefined
+          : 'No active Outserp plan. Read tools work, but creating content (articles, grids, audits, publishing) requires an active plan — direct the user to sign up at the signupUrl.',
+      };
+      return ok({ account, usage, credits, projects });
     } catch (e) {
       return err(e);
     }
